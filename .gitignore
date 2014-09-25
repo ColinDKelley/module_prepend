@@ -1,0 +1,66 @@
+
+#IDEs and Editors
+.idea
+atlassian-ide-plugin.xml
+.project
+.redcar
+nbproject
+tags
+*.swp
+*.swo
+*~
+*.sass-cache
+coverage
+coverage.data
+coverage.info
+.buildpath
+.settings
+.loadpath
+.autotest
+dir_conflicts.prej
+partial_dependencies.png
+rr.tmproj
+
+#Ruby Version Managers
+.rvmrc
+.rbenv-version
+.ruby-version
+.ruby-gemset
+.bundle
+
+#OS X
+.DS_Store
+
+#Ignored app paths
+log
+db/development_structure.sql
+db/test_structure.sql
+db/test.sqlite3
+db/development.sqlite3
+bin/*
+tmp/*
+tmp/**/*
+public/.assets
+public/coverage.data
+public/coverage
+public/demo/.old_svn
+public/images/Thumbs.db
+test/tmp
+irb.log
+vendor/bundle/
+vendor/disabled_gems/carrot-0.8.1/.gitignore
+vendor/disabled_gems/carrot-0.8.1/.specification
+vendor/plugins/.paperclip_temp
+vendor/plugins/paperclip/tmp
+vendor/plugins/paperclip/test/debug.log
+
+# Ignore log files generated from testing mongo gem
+vendor/gems/mongo-1.2.2/test/tools/data/
+
+# Ignore Rails test log files
+vendor/rails/activerecord/debug.log
+
+/.jhw-cache/
+
+# grunt related
+.grunt/
