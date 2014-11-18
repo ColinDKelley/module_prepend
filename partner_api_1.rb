@@ -1,5 +1,10 @@
+# Version 1
 class PartnerApi
   include Invoca::Metrics::Source
+
+  def initialize(domain, credentials)
+    @domain, @credentials = domain, credentials
+  end
 
   def availability_for_npa(npa)
     log_success_or_failure_metric("availability_for_npa") do
