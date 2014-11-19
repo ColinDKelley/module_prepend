@@ -45,7 +45,7 @@ class PartnerApi
     id.presence or raise ApiError.new(response.code, response.body, "id of the order is blank")
   end
 
-  
+
   publish_success_metric \
   def phone_numbers_for_order(order_id)
     response = remote_procedure("orders/#{order_id}", verb: :get)
