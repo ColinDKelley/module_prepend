@@ -9,6 +9,7 @@ class PartnerApi
     @domain, @credentials = domain, credentials
   end
 
+
   def availability_for_npa(npa)
     response = remote_procedure("availableNpaNxx", verb: :get, query: { areaCode: npa })
     case response.code
@@ -24,6 +25,7 @@ class PartnerApi
     end
   end
   publish_success_metric :availability_for_npa
+
 
   def place_order_for_npa_nxx(npa_nxx, quantity)
     request_body = {
@@ -42,6 +44,7 @@ class PartnerApi
     id.presence or raise ApiError.new(response.code, response.body, "id of the order is blank")
   end
   publish_success_metric :place_order_for_npa_nxx
+
 
   def phone_numbers_for_order(order_id)
     response = remote_procedure("orders/#{order_id}", verb: :get)

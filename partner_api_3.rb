@@ -1,5 +1,4 @@
 # Version 3
-require 'invoca/metrics'
 require './publish_success_metrics'
 
 class PartnerApi
@@ -9,6 +8,7 @@ class PartnerApi
   def initialize(domain, credentials)
     @domain, @credentials = domain, credentials
   end
+
 
   publish_success_metric \
   def availability_for_npa(npa)
@@ -25,6 +25,7 @@ class PartnerApi
       raise ApiError.new(response.code, response.body)
     end
   end
+
 
   publish_success_metric \
   def place_order_for_npa_nxx(npa_nxx, quantity)
@@ -44,6 +45,7 @@ class PartnerApi
     id.presence or raise ApiError.new(response.code, response.body, "id of the order is blank")
   end
 
+  
   publish_success_metric \
   def phone_numbers_for_order(order_id)
     response = remote_procedure("orders/#{order_id}", verb: :get)

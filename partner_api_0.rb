@@ -8,6 +8,7 @@ class PartnerApi
     @domain, @credentials = domain, credentials
   end
 
+
   def availability_for_npa(npa)
     response = remote_procedure("availableNpaNxx", verb: :get, query: { areaCode: npa })
     case response.code
@@ -27,6 +28,7 @@ class PartnerApi
     metrics.increment("partner_api.availability_for_npa.failure")
     raise
   end
+
 
   def place_order_for_npa_nxx(npa_nxx, quantity)
     request_body = {
@@ -50,6 +52,7 @@ class PartnerApi
     metrics.increment("partner_api.place_order_for_npa_nxx.failure")
     raise
   end
+
 
   def phone_numbers_for_order(order_id)
     response = remote_procedure("orders/#{order_id}", verb: :get)
