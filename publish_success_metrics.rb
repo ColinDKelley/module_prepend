@@ -1,4 +1,8 @@
-module PublishSuccessMetric
+require 'active_support'
+require 'invoca/metrics'
+
+module PublishSuccessMetrics
+  include Invoca::Metrics::Source
   extend ActiveSupport::Concern
 
   def publish_success_metric_wrapper(*metric_names)

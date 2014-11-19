@@ -1,4 +1,6 @@
 # Version 0
+require 'invoca/metrics'
+
 class PartnerApi
   include Invoca::Metrics::Source
 

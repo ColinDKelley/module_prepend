@@ -1,7 +1,8 @@
 # Version 2
+require './publish_success_metrics'
+
 class PartnerApi
-  include Invoca::Metrics::Source
-  include PublishSuccessMetric
+  include PublishSuccessMetrics
   success_metric_prefix 'partner_api'
 
   def initialize(domain, credentials)
